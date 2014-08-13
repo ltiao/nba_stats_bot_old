@@ -15,3 +15,12 @@ NEWSPIDER_MODULE = 'nba_stats_bot.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'nba_stats_bot (+http://www.yourdomain.com)'
+
+ITEM_PIPELINES = {
+	'nba_stats_bot.pipelines.BotPipeline': 1,
+}
+
+import os
+
+HTTPCACHE_ENABLED = True
+HTTPCACHE_DIR = os.path.join('/Users/tiao/Desktop', 'httpcache')
