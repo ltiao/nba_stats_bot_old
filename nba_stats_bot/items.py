@@ -6,7 +6,12 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 from scrapy import Item, Field
+from scrapy.contrib.djangoitem import DjangoItem
 from pandas import DataFrame
+from nba.models import Player
+
+class PlayerItem(DjangoItem):
+	django_model = Player
 
 class NBAStatsItem(Item):
 	data = Field()
